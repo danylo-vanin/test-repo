@@ -1,0 +1,9 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/osdu-deploy-vanin/test-repo/nginx-test', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'us-central1-docker.pkg.dev/osdu-deploy-vanin/test-repo/nginx-test']
+images: ['us-central1-docker.pkg.dev/osdu-deploy-vanin/test-repo/nginx-test']
+
+options:
+  requestedVerifyOption: VERIFIED
